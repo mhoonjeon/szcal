@@ -10,12 +10,13 @@ pip install -r requirments.txt
 
 ## Run
 ```python
+python manage.py init_db # 로컬에서 db init
 python manage.py fetch_zipcode # 우체국으로부터 우편번호 데이터를 받아옵니다.
 python manage.py parse_cj # CJ대한통운기준으로 도서산간지방들의 주소, 우편번호, 추가 배송금액을 DB에 저장합니다.
 FLASK_APP=app.py flask run # API RUN
 ```
 ## Example
-[GET] /cj/secluded_place?address="제주특별자치도 서귀포시  가가로 14"
+[GET] /cj/secluded_place?address=제주특별자치도 서귀포시  가가로 14
 ```js
 {
     "additional_fee": 3000,

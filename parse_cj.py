@@ -37,10 +37,10 @@ def scrap_match_data(line, local_list):
 
 
 async def parse_zipcode(file_name, local_list):
-    async with aiofiles.open(file_name, mode='rb') as f:
+    async with aiofiles.open(file_name, mode='r', encoding='UTF8') as f:
         result = list()
         async for line in f:
-            line = line.decode('cp949').split('|')
+            line = line.split('|')
             item = scrap_match_data(line, local_list)
             if item is not None:
                 result.append(item)
@@ -49,10 +49,10 @@ async def parse_zipcode(file_name, local_list):
 
 
 async def parse_jeonnam_zipcode(file_name, local_list):
-    async with aiofiles.open(file_name, mode='rb') as f:
+    async with aiofiles.open(file_name, mode='r', encoding='UTF8') as f:
         result = list()
         async for line in f:
-            line = line.decode('cp949').split('|')
+            line = line.split('|')
             item = scrap_match_data(line, local_list)
             if item is not None:
                 result.append(item)
@@ -74,10 +74,10 @@ async def parse_jeonnam_zipcode(file_name, local_list):
 
 
 async def parse_incheon_zipcode(file_name, local_list):
-    async with aiofiles.open(file_name, mode='rb') as f:
+    async with aiofiles.open(file_name, mode='r', encoding='UTF8') as f:
         result = list()
         async for line in f:
-            line = line.decode('cp949').split('|')
+            line = line.split('|')
             item = scrap_match_data(line, local_list)
             if item is not None:
                 result.append(item)
@@ -90,10 +90,10 @@ async def parse_incheon_zipcode(file_name, local_list):
 
 
 async def parse_jeju_zipcode(file_name):
-    async with aiofiles.open(file_name, mode='rb') as f:
+    async with aiofiles.open(file_name, mode='r', encoding='UTF8') as f:
         result = list()
         async for line in f:
-            line = line.decode('cp949').split('|')
+            line = line.split('|')
             if line[1] == '제주특별자치도':
                 if line[5] == '우도면':
                     result.append(make_result(line, {'add_fee': 9000}))

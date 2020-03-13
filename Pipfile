@@ -1,0 +1,26 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+aiofiles = "*"
+certifi = "*"
+chardet = "*"
+click = "*"
+flask-cors = "*"
+idna = "*"
+itsdangerous = "*"
+requests = "*"
+six = "*"
+urllib3 = "*"
+Flask = "*"
+Jinja2 = "*"
+MarkupSafe = "*"
+SQLAlchemy = "*"
+Werkzeug = "*"
+
+[requires]
+python_version = "3.8"
